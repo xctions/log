@@ -21,11 +21,9 @@ runs:
 
     - name: Set execute permissions
       shell: bash
-      run: chmod +x ./bin/*.sh
-
-    - name: Add bin to PATH
-      shell: bash
-      run: echo "::add-path::$(pwd)/bin"
+      run: |
+        chmod +x ./tmp/bin/*.sh
+        echo "PATH=$PATH:$(pwd)/tmp/bin" >> $GITHUB_ENV
 
     - name: Print message
       shell: bash
