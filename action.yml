@@ -15,7 +15,6 @@ runs:
   steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      shell: bash
       with:
         repository: xctions/log
         ref: main
